@@ -11,44 +11,45 @@ import { IScreen } from '../utils/interfaces';
 
 const Main: FC<IScreen> = () => {
 
-  const [email, setEmail] = useState('');
-  const [cellPhone, setCellPhone] = useState('');
+  const [grifo, setGrifo] = useState('');
+  const [costo, setCosto] = useState('');
 
-  const changeEmailText = (text: string) => {
-    setEmail(text);
+  const changeGrifoText = (text: string) => {
+    setGrifo(text);
   }
-  const changeCellPhoneText = (text: string) => {
-    setCellPhone(text);
+  const changeCostoText = (text: string) => {
+    setCosto(text);
   }
 
   const handleSubmit = () => {
-    console.log()
+    console.log('GRIFO', grifo);
+    console.log('GRIFO', costo);
   }
 
   return (
     <ScreenLayout>
     <Wrapper>
       <Title text={'Ingresar'} bold={false} />
-      <Paragraph>Datos para ingresar al sistema</Paragraph>
+      <Paragraph>Datos para ingresar</Paragraph>
     </Wrapper>
     <Wrapper>
       <TextInput
-        value={email}
+        value={grifo}
         defaultValue={''}
         // maxLength={14}
-        label={'Email'}
-        onChangeText={changeEmailText}
+        label={'Grifo'}
+        onChangeText={changeGrifoText}
       />
       <TextInput
-        value={cellPhone}
+        value={costo}
         defaultValue={''}
         // maxLength={14}
-        label={'Nro. Celular'}
-        onChangeText={changeCellPhoneText}
+        label={'Costo'}
+        onChangeText={changeCostoText}
       />
       <Button
-        // filled={isFetching}
-        // loading={!isFetching}
+        filled={false}
+        loading={true}
         text={'Aceptar'}
         onPress={handleSubmit}
       />
