@@ -16,8 +16,12 @@ const Main: FC<IScreen> = ({ navigation }) => {
   
   const {dispatch} = useGlobalContext();
 
-  const [grifo, setGrifo] = useState('');
-  const [costo, setCosto] = useState('');
+  // const [grifo, setGrifo] = useState('1, 2, 3, 4, 5');
+  // const [costo, setCosto] = useState('3, 4, 5, 1, 2');
+
+  const [grifo, setGrifo] = useState('4, 5, 1, 2, 3');
+  const [costo, setCosto] = useState('1, 2, 3, 4, 5');
+
 
   const changeGrifoText = (text: string) => {
     setGrifo(text);
@@ -27,8 +31,8 @@ const Main: FC<IScreen> = ({ navigation }) => {
   }
 
   const handleSubmit = () => {
-    const grifos = grifo.split(',');
-    const costos = costo.split(',');
+    const grifos = grifo.split(',').map(item => Number(item.trim()));
+    const costos = costo.split(',').map(item => Number(item.trim()));
     
     dispatch(setData({ grifos, costos }));
     navigation.navigate(Route.Result);

@@ -4,8 +4,8 @@ export interface IActions {
 }
 
 export interface IAppState {
-  grifos: [] | null;
-  costos: [] | null;
+  grifos: number[] | null;
+  costos: number[] | null;
 }
 
 export interface IState {
