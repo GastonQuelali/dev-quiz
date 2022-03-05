@@ -10,7 +10,6 @@ const StyledTitle = styled(Text)<{ bold: boolean | undefined }>`
   font-size: 24px;
   line-height: 33px;
   padding: 15px;
-  
 `;
 
 const Title: FC<ITitle> = ({ text, bold = true }): ReactElement => (

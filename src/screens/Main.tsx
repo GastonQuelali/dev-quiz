@@ -6,10 +6,15 @@ import ScreenLayout from '../components/ScreenLayout';
 import TextInput from '../components/TextInput';
 import Title from '../components/Title';
 import Wrapper from '../components/Wrapper';
+import Route from '../navigation/Route';
+import { setData } from '../state/Actions';
+import { useGlobalContext } from '../state/Context';
 
 import { IScreen } from '../utils/interfaces';
 
-const Main: FC<IScreen> = () => {
+const Main: FC<IScreen> = ({ navigation }) => {
+  
+  const {dispatch} = useGlobalContext();
 
   const [grifo, setGrifo] = useState('');
   const [costo, setCosto] = useState('');
@@ -22,8 +27,11 @@ const Main: FC<IScreen> = () => {
   }
 
   const handleSubmit = () => {
-    console.log('GRIFO', grifo);
-    console.log('GRIFO', costo);
+    const grifos = grifo.split(',');
+    const costos = costo.split(',');
+    
+    dispatch(setData({ grifos, costos }));
+    navigation.navigate(Route.Result);
   }
 
   return (
