@@ -34,7 +34,7 @@ export default function App() {
     >
       <NavigationContainer >
       <Stack.Navigator>
-        <Stack.Screen name={Route.Main} component={Main} options={{ headerShown: false }} />
+        <Stack.Screen name={Route.Main} component={Main} options={optionsDefault} />
         <Stack.Screen
           name={Route.Result}
           component={Result}
