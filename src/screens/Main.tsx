@@ -19,9 +19,6 @@ const Main: FC<IScreen> = ({ navigation }) => {
   const [grifo, setGrifo] = useState('1, 2, 3, 4, 5');
   const [costo, setCosto] = useState('3, 4, 5, 1, 2');
 
-  // const [grifo, setGrifo] = useState('4, 5, 1, 2, 3');
-  // const [costo, setCosto] = useState('1, 2, 3, 4, 5');
-
   const changeGrifoText = (text: string) => {
     setGrifo(text);
   }
